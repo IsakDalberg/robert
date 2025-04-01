@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from gtts import gTTS
 import os
+from config import Config
 
 speech_bp = Blueprint('speech', __name__)
 
@@ -25,6 +26,8 @@ def talk():
     
 
 def speak_text(message):
+    if Config.USE_AUDIO == False:
+        return
     tts = gTTS(text=message, lang='en', slow=False)
     audio_file = "output.mp3"
     tts.save(audio_file)

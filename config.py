@@ -24,6 +24,8 @@ class Config:
 
     # Speech settings
     SPEECH_ENGINE = os.getenv('SPEECH_ENGINE', 'gtts')  # Options: 'gtts' or 'pyttsx3'
+    USE_AI = True
+    USE_AUDIO = False
 
     # Flask server settings
     SERVER_HOST = os.getenv('SERVER_HOST', '0.0.0.0')
